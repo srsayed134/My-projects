@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chandina City Centre - Rent Summary Pad</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      padding: 20px;
+    }
+    .pad {
+      background: white;
+      padding: 200px 40px 60px 40px;
+      max-width: 900px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      position: relative;
+    }
+    .pad::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDABQODxIPEhQXEhcaGBgZIR0dGh0dISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhL/wAALCAA0ADQBAREA/8QAFgABAQEAAAAAAAAAAAAAAAAAAAED/8QAIRAAAgICAgEFAAAAAAAAAAAAAQIDBAAREiExIkFRYXL/xAAWAQEBAQAAAAAAAAAAAAAAAAAEAgP/xAAdEQACAQQDAAAAAAAAAAAAAAABAgADBAURIRIx/9oADAMBAAIRAxEAPwDab4xVfVCSql8T56cAOjqCeMRBd7ypRMnWDjKxyE9JOV7WvPFqDkHFMvU0xV2jBghK0GKy9HYYq22AAAO7XvfZueGVWn//Z') no-repeat center top;
+      background-size: cover;
+      opacity: 0.15;
+      z-index: 0;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 1;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 1;
+    }
+    th, td {
+      border: 1px solid #aaa;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f8f8f8;
+    }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 30px;
+      position: relative;
+      z-index: 1;
+    }
+    input[type='text'], input[type='number'], input[type='date'] {
+      width: 100%;
+      padding: 4px;
+    }
+    .form-table td {
+      padding: 4px;
+    }
+    button {
+      margin-bottom: 20px;
+      padding: 8px 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="pad" id="printArea">
+    <h2>Shop Rent Income Summary Sheet</h2>
+    <table class="form-table">
+      <tr>
+        <td>Shop No.</td>
+        <td><input type="number" id="shopNo" /></td>
+        <td>Tenant Name</td>
+        <td><input type="text" id="tenantName" /></td>
+      </tr>
+      <tr>
+        <td>Monthly Rent (BDT)</td>
+        <td><input type="number" id="monthlyRent" /></td>
+        <td>Last Payment Date</td>
+        <td><input type="date" id="paymentDate" /></td>
+      </tr>
+      <tr>
+        <td>Contact Number</td>
+        <td colspan="3"><input type="text" id="contactNumber" /></td>
+      </tr>
+    </table>
+    <button onclick="addRow()">Add to Summary</button>
+    <table id="summaryTable">
+      <thead>
+        <tr>
+          <th>Shop No.</th>
+          <th>Tenant Name</th>
+          <th>Monthly Rent (BDT)</th>
+          <th>Last Payment Date</th>
+          <th>Contact Number</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <div class="footer">
+      <div>Print Date: <span id="printDate"></span></div>
+      <div>Supervisor Signature: ___________________</div>
+    </div>
+  </div>
+
+  <script>
+    function addRow() {
+      const shopNo = document.getElementById('shopNo').value;
+      const tenantName = document.getElementById('tenantName').value;
+      const monthlyRent = document.getElementById('monthlyRent').value;
+      const paymentDate = document.getElementById('paymentDate').value;
+      const contactNumber = document.getElementById('contactNumber').value;
+
+      if (!shopNo || !tenantName || !monthlyRent || !paymentDate || !contactNumber) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      const table = document.getElementById('summaryTable').getElementsByTagName('tbody')[0];
+      const row = table.insertRow();
+      row.insertCell(0).innerText = shopNo;
+      row.insertCell(1).innerText = tenantName;
+      row.insertCell(2).innerText = monthlyRent;
+      row.insertCell(3).innerText = paymentDate;
+      row.insertCell(4).innerText = contactNumber;
+
+      // Clear inputs
+      document.getElementById('shopNo').value = '';
+      document.getElementById('tenantName').value = '';
+      document.getElementById('monthlyRent').value = '';
+      document.getElementById('paymentDate').value = '';
+      document.getElementById('contactNumber').value = '';
+    }
+
+    document.getElementById('printDate').innerText = new Date().toLocaleDateString();
+  </script>
+</body>
+</html>

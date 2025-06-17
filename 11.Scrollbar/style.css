@@ -1,0 +1,31 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    color: white;
+}
+.scroll-container{
+    background-color: rgb(7, 7, 7);
+    width: 25rem;
+    margin-top: 5rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+    /* border: 3px solid red; */
+}
+.scroll-div{
+    /* border: 5px solid blue; */
+    width: 25rem;
+    height: 35rem;
+    background: black;
+    overflow: hidden;
+    overflow-y: scroll;
+
+}
+.scroll-object{
+    /* border: 3px solid green; */
+    line-height: 1.3rem;
+    font-size: 20px;
+    padding: 20px;
+    word-spacing: .5rem;
+}

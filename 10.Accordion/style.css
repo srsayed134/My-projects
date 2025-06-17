@@ -1,0 +1,54 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: crimson;
+    font-family: sans-serif;
+}
+#accordion {
+    /* border: 5px solid black; */
+    margin: 100px auto;
+    width: 600px;
+}
+#accordion li {
+    list-style: none;
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    border: 3px solid black;
+}
+#accordion li label{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 18px;
+    color: dodgerblue;
+    cursor: pointer;
+}
+
+#accordion li label span{
+    transform: rotate(90deg);
+    font-size: 22px;
+    color: dodgerblue;
+}
+
+#accordion label + input[type="radio"] {
+    display: none;
+}
+
+#accordion .content{
+    padding: 0 10px;
+    line-height: 22px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.6s;
+}
+
+#accordion label + input[type="radio"]:checked + .content{
+    max-height: 400px;
+}
