@@ -22,3 +22,14 @@ window.addEventListener("scroll", function (){
 
 // For batter understand follow this - https://youtu.be/lwZTJ0TJTN8?si=aDsONFpaP_DyMJij 
 
+
+
+
+
+
+
+
+
+
+
+

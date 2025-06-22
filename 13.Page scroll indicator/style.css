@@ -22,18 +22,38 @@ section h1{
 }
 
 .scroll-indicator{
-    height: 10px;
+    height: 5px;
     width: calc(100% - 6em);
     top: 1.5em;
     left: 3em;
     border-radius: 3px;
     position: fixed;
-    border: 1px solid red;
+    border: 1px solid red; 
 }
 .scroll-indicator .progress{
     height: 100%;
     width: 0%;
     border-radius: 3px;
     background: linear-gradient(30deg, #21d4fd, #b721ff);
-    transition: width 0.1s;
+    transition: 0.1s;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
