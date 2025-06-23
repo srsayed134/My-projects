@@ -1,0 +1,90 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --main-color: #dc143c;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(7, 7, 20);
+}
+
+/* gray heart  */
+
+.gray-heart{
+    background: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    transform: rotate(-45deg);
+    position: relative;
+}
+/* .red-heart{
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+} */
+
+.gray-heart::before,
+.gray-heart::after{
+    content: "";
+    background:#ccc;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+.gray-heart::before{
+    top: -50px;
+    left: 0;
+}
+.gray-heart::after{
+    top: -50px;
+    left: 0;
+}
+.gray-heart::before{
+    left: 50px;
+    top: 0;
+}
+
+.red-heart{
+    background: var(--main-color);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    transform: rotate(-45deg);
+}
+.red-heart::before,
+.red-heart::after{
+    border-radius: 50%;
+    content: "";
+    background: var(--main-color);
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+.red-heart::before{
+    top: -50px;
+    left: 0;
+}
+.red-heart::after{
+    left: 50px;
+    top: 0;
+    
+}
