@@ -69,6 +69,7 @@ body{
     width: 100px;
     height: 100px;
     transform: rotate(-45deg);
+    visibility: hidden;
 }
 .red-heart::before,
 .red-heart::after{
@@ -87,4 +88,17 @@ body{
     left: 50px;
     top: 0;
     
+}
+.red-heart.animation{
+    animation: pop 0.9 linear;
+    visibility: visible;
+}
+.heart.fill-color{
+    background: var(--main-color);
+}
+@keyframes pop{
+    100% {
+        transform: scale(1.7) rotate(-45deg);
+        opacity: 0;
+    }
 }
