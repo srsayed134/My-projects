@@ -2,6 +2,8 @@ const btn = document.querySelector(".btn");
 const hexcode =document.querySelector(".hexcode");
 
 //made a function that can chosse 6 times by loop from letter 
+
+
 function randomColor() {
     let letter = "0123456789ABCDEF";
     let colors = "#";

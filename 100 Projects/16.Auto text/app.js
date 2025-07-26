@@ -17,6 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 })
 
+
+
+
 function type (){
     if(charIndex < words[index].length){
         typedTextSpan.textContent += words[index].charAt(charIndex);
@@ -34,8 +37,6 @@ function erease(){
         setTimeout(erease, erasingDelay);
     }else{
         index++;
-        console.log(index)
-        console.log(words.length)
         if(index >= words.length){
             index = 0;
         }
