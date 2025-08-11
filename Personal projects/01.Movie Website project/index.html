@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frybook</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Logo, Search-box, Tav -->
+    <div class="header">
+        <img src="" alt="logo" class="logo">
+        <form action="/search" method="GET">
+            <input type="text" name="q" placeholder="Search here...">
+            <button type="submit" class="search-btn">Search</button>
+        </form>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="#">X</a>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <!-- Movie list  -->
+    <div class="main"></div>
+
+    <!-- About, Description, previous, next -->
+    <div class="footer"></div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
